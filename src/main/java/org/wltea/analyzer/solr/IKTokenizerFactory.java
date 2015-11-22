@@ -31,6 +31,7 @@ import java.util.Map;
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.util.TokenizerFactory;
 import org.wltea.analyzer.lucene.IKTokenizer;
+import org.apache.lucene.util.AttributeSource.AttributeFactory;
 
 /**
  * IK中文分词
@@ -44,18 +45,22 @@ public class IKTokenizerFactory extends TokenizerFactory {
 	
 	private boolean useSmart = false;
 	
-    @Override
-    public void init(Map<String, String> params) {
-        super.init(params);
+    public IKTokenizerFactory(Map<String, String> params) {
+        super(params);
         String useSmartParam = params.get("useSmart");
         this.useSmart = (useSmartParam != null ? Boolean.parseBoolean(useSmartParam) : false);
     }	
 
 	/* (non-Javadoc)
 	 * @see org.apache.solr.analysis.TokenizerFactory#create(java.io.Reader)
-	 */
 	public Tokenizer create(Reader in) {
 		return new IKTokenizer(in , this.useSmart);
 	}
+	 */
 
+    @Override
+    public Tokenizer create(AttributeFactory factory, Reader input) {
+        Tokenizer _IKTokenizer = new IKTokenizer(input , this.useSmart);
+        return _IKTokenizer;
+    }
 }

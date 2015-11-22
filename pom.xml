@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.wltea</groupId>
 	<artifactId>ik-analyzer</artifactId>
-	<version>4.2.0</version>
+	<version>4.7.1</version>
 	<name>寻优中文分词</name>
 
 	<properties>
@@ -14,17 +14,17 @@
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
-			<version>4.2.0</version>
+			<version>4.7.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-queryparser</artifactId>
-			<version>4.2.0</version>
+			<version>4.7.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-analyzers-common</artifactId>
-			<version>4.2.0</version>
+			<version>4.7.1</version>
 		</dependency>
 	</dependencies>
 
